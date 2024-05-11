@@ -1,0 +1,9 @@
+{
+	"extends": "@cloudflare/workers-tsconfig/tsconfig.json",
+	"compilerOptions": {
+		"types": ["node", "jest"],
+		"jsx": "preserve"
+	},
+	"include": ["../*.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
+	"exclude": ["../jest.d.ts"]
+}
