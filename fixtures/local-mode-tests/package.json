@@ -1,0 +1,22 @@
+{
+	"name": "local-mode-tests",
+	"private": true,
+	"description": "",
+	"keywords": [],
+	"license": "ISC",
+	"author": "",
+	"main": "index.js",
+	"scripts": {
+		"check:type": "tsc",
+		"test:ci": "vitest run",
+		"test:watch": "vitest",
+		"type:tests": "tsc -p ./tests/tsconfig.json"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-tsconfig": "workspace:*",
+		"@cloudflare/workers-types": "^4.20240419.0",
+		"@types/node": "^20.8.3",
+		"buffer": "^6.0.3",
+		"wrangler": "workspace:*"
+	}
+}

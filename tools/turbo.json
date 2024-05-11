@@ -1,0 +1,14 @@
+{
+	"$schema": "http://turbo.build/schema.json",
+	"extends": ["//"],
+
+	"pipeline": {
+		"build": {
+			"env": [
+				"CLOUDFLARE_API_TOKEN",
+				"PUBLISHED_PACKAGES",
+				"CLOUDFLARE_ACCOUNT_ID"
+			]
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"name": "do-worker-app",
+	"private": true,
+	"description": "",
+	"license": "ISC",
+	"author": "",
+	"main": "src/index.js",
+	"scripts": {
+		"dev": "wrangler deploy --dry-run",
+		"test": "npx vitest run",
+		"test:ci": "npx vitest run",
+		"test:watch": "npx vitest"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-tsconfig": "workspace:^",
+		"undici": "^5.28.4",
+		"wrangler": "workspace:*"
+	}
+}
