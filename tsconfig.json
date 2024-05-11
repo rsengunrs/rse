@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"esModuleInterop": true,
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"lib": ["esnext"],
+		"incremental": true,
+		"strict": true,
+		// `alwaysStrict: false` is needed because otherwise esbuild will add `"use strict";`
+		// statements throughout the imported libraries which can break them.
+		"alwaysStrict": false,
+		"skipLibCheck": true,
+		"types": ["vitest/globals"],
+		"moduleResolution": "node"
+	},
+	"exclude": ["node_modules/"]
+}
