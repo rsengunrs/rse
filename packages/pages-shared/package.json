@@ -1,0 +1,31 @@
+{
+	"name": "@cloudflare/pages-shared",
+	"version": "0.10.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cloudflare/workers-sdk.git",
+		"directory": "packages/pages-shared"
+	},
+	"files": [
+		"tsconfig.json",
+		"asset-server/**/*",
+		"environment-polyfills/**/*",
+		"metadata-generator/**/*"
+	],
+	"scripts": {
+		"check:type": "tsc",
+		"test": "vitest run",
+		"test:ci": "vitest run"
+	},
+	"dependencies": {
+		"miniflare": "3.20231025.0"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-tsconfig": "workspace:*",
+		"@cloudflare/workers-types": "^4.20230511.0",
+		"@types/service-worker-mock": "^2.0.1",
+		"concurrently": "^7.3.0",
+		"glob": "^8.0.3",
+		"service-worker-mock": "^2.0.5"
+	}
+}
