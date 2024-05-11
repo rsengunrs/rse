@@ -1,0 +1,17 @@
+{
+	"name": "service-bindings-app",
+	"private": true,
+	"description": "A test for service bindings",
+	"scripts": {
+		"check:type": "tsc",
+		"dev": "npx concurrently -s first -k \"wrangler dev a/index.ts --local --port 8300\" \"wrangler dev b/index.ts --local --port 8301\"",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"type:tests": "tsc -p ./tests/tsconfig.json"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-tsconfig": "workspace:*",
+		"wrangler": "workspace:*",
+		"undici": "^5.23.0"
+	}
+}
