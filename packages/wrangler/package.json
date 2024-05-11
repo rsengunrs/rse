@@ -1,0 +1,124 @@
+{
+  "name": "wrangler",
+  "version": "0.0.6",
+  "author": "wrangler@cloudflare.com",
+  "description": "Command-line interface for all things Cloudflare Workers",
+  "bin": {
+    "wrangler": "./bin/wrangler.js",
+    "wrangler2": "./bin/wrangler.js"
+  },
+  "license": "MIT OR Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cloudflare/wrangler/issues"
+  },
+  "homepage": "https://github.com/cloudflare/wrangler#readme",
+  "keywords": [
+    "wrangler",
+    "cloudflare",
+    "workers",
+    "cloudflare workers",
+    "edge",
+    "compute",
+    "serverless",
+    "serverless application",
+    "serverless module",
+    "wasm",
+    "web",
+    "assembly",
+    "webassembly",
+    "rust",
+    "emscripten",
+    "rust",
+    "typescript",
+    "graphql",
+    "router",
+    "http",
+    "cli"
+  ],
+  "dependencies": {
+    "esbuild": "0.14.1",
+    "miniflare": "2.0.0-rc.4",
+    "path-to-regexp": "^6.2.0",
+    "semiver": "^1.1.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "~2.3.2"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.16.0",
+    "@iarna/toml": "^2.2.5",
+    "@types/mime": "^2.0.3",
+    "@types/estree": "^0.0.50",
+    "@types/react": "^17.0.37",
+    "@types/serve-static": "^1.13.10",
+    "@types/signal-exit": "^3.0.1",
+    "@types/ws": "^8.2.1",
+    "@types/yargs": "^17.0.7",
+    "acorn": "^8.6.0",
+    "acorn-walk": "^8.2.0",
+    "chokidar": "^3.5.2",
+    "clipboardy": "^3.0.0",
+    "command-exists": "^1.2.9",
+    "execa": "^6.0.0",
+    "faye-websocket": "^0.11.4",
+    "finalhandler": "^1.1.2",
+    "find-up": "^6.2.0",
+    "formdata-node": "^4.3.1",
+    "ink": "^3.2.0",
+    "ink-select-input": "^4.2.1",
+    "ink-table": "^3.0.0",
+    "ink-text-input": "^4.0.2",
+    "mime": "^3.0.0",
+    "node-fetch": "^3.1.0",
+    "open": "^8.4.0",
+    "react": "^17.0.2",
+    "react-error-boundary": "^3.1.4",
+    "serve-static": "^1.14.1",
+    "signal-exit": "^3.0.6",
+    "tmp-promise": "^3.0.3",
+    "undici": "^4.11.1",
+    "ws": "^8.3.0",
+    "yargs": "^17.3.0"
+  },
+  "files": [
+    "src",
+    "bin",
+    "pages",
+    "miniflare-config-stubs",
+    "wrangler-dist",
+    "static-asset-facade.js",
+    "vendor",
+    "import_meta_url.js"
+  ],
+  "scripts": {
+    "clean": "rm -rf wrangler-dist",
+    "bundle": "node -r esbuild-register scripts/bundle.ts",
+    "build": "npm run clean && npm run bundle",
+    "start": "npm run bundle && NODE_OPTIONS=--enable-source-maps ./bin/wrangler.js",
+    "test": "CF_API_TOKEN=some-api-token CF_ACCOUNT_ID=some-account-id jest --silent=false --verbose=true"
+  },
+  "engines": {
+    "node": ">=16.7.0"
+  },
+  "jest": {
+    "restoreMocks": true,
+    "testRegex": ".*.(test|spec)\\.[jt]sx?$",
+    "transformIgnorePatterns": [
+      "node_modules/(?!node-fetch|fetch-blob|find-up|locate-path|p-locate|p-limit|yocto-queue|path-exists|data-uri-to-buffer|formdata-polyfill|execa|strip-final-newline|npm-run-path|path-key|onetime|mimic-fn|human-signals|is-stream)"
+    ],
+    "moduleNameMapper": {
+      "clipboardy": "<rootDir>/src/__tests__/clipboardy-mock.js"
+    },
+    "transform": {
+      "^.+\\.c?(t|j)sx?$": [
+        "esbuild-jest",
+        {
+          "sourcemap": true
+        }
+      ]
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__tests__/jest.setup.ts"
+    ]
+  }
+}
