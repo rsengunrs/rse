@@ -1,0 +1,30 @@
+{
+  "name": "local-mode-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "check:type": "tsc",
+    "test": "npx jest --forceExit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.2.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "restoreMocks": true,
+    "testTimeout": 30000,
+    "testRegex": ".*.(test|spec)\\.[jt]sx?$",
+    "transform": {
+      "^.+\\.c?(t|j)sx?$": [
+        "esbuild-jest",
+        {
+          "sourcemap": true
+        }
+      ]
+    }
+  }
+}
