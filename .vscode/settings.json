@@ -1,0 +1,33 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "cSpell.words": [
+    "cfetch",
+    "clipboardy",
+    "cloudflared",
+    "esbuild",
+    "eslintcache",
+    "estree",
+    "execa",
+    "iarna",
+    "keyvalue",
+    "middlewares",
+    "Miniflare",
+    "outdir",
+    "outfile",
+    "pgrep",
+    "PKCE",
+    "Positionals",
+    "textfile",
+    "tsbuildinfo",
+    "undici",
+    "wasmvalue",
+    "weakmap",
+    "weakset",
+    "webassemblymemory",
+    "websockets",
+    "xxhash"
+  ],
+  "cSpell.ignoreWords": ["TESTWASMNAME", "yxxx"],
+  "eslint.runtime": "node",
+  "files.trimTrailingWhitespace": true
+}
