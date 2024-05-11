@@ -478,11 +478,7 @@ export async function generateHandler<
 		);
 	}
 
-	const responseWithoutHeaders = await generateResponse();
-	if (responseWithoutHeaders.status >= 500) {
-		return responseWithoutHeaders;
-	}
-	return await attachHeaders(responseWithoutHeaders);
+	return await attachHeaders(await generateResponse());
 
 	async function serveAsset(
 		servingAssetEntry: AssetEntry,

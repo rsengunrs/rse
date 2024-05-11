@@ -57,7 +57,7 @@ export function useEsbuild({
 	testScheduled,
 	experimentalLocal,
 	projectRoot,
-	onStart,
+	onBundleStart,
 	defineNavigatorUserAgent,
 }: {
 	entry: Entry;
@@ -84,7 +84,7 @@ export function useEsbuild({
 	testScheduled: boolean;
 	experimentalLocal: boolean | undefined;
 	projectRoot: string | undefined;
-	onStart: () => void;
+	onBundleStart: () => void;
 	defineNavigatorUserAgent: boolean;
 }): EsbuildBundle | undefined {
 	const [bundle, setBundle] = useState<EsbuildBundle>();
@@ -136,7 +136,7 @@ export function useEsbuild({
 			name: "on-end",
 			setup(b: PluginBuild) {
 				b.onStart(() => {
-					onStart();
+					onBundleStart();
 				});
 				b.onEnd(async (result: BuildResult) => {
 					const errors = result.errors;
@@ -271,7 +271,7 @@ export function useEsbuild({
 		testScheduled,
 		experimentalLocal,
 		projectRoot,
-		onStart,
+		onBundleStart,
 		defineNavigatorUserAgent,
 	]);
 	return bundle;

@@ -7,11 +7,12 @@
 				"src/**",
 				"scripts/**",
 				"types/**",
+				"worker-metafiles/**",
 				"*.mjs",
 				"*.js",
 				"*.json"
 			],
-			"outputs": ["dist/**", "bootstrap.js", "worker-metafiles/**"],
+			"outputs": ["dist/**", "bootstrap.js"],
 			"env": [
 				"CI_OS"
 			]
