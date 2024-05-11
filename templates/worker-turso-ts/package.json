@@ -1,0 +1,18 @@
+{
+	"name": "worker-turso-ts",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"start": "wrangler dev --local"
+	},
+	"dependencies": {
+		"@libsql/client": "^0.1.1",
+		"itty-router": "^3.0.12"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20230518.0 ",
+		"typescript": "^5.0.3",
+		"wrangler": "^3.0.0"
+	}
+}
