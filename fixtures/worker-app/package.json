@@ -1,0 +1,9 @@
+{
+	"name": "worker-app",
+	"version": "1.0.1",
+	"private": true,
+	"description": "",
+	"license": "ISC",
+	"author": "",
+	"main": "src/index.js"
+}
