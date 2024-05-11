@@ -1,0 +1,20 @@
+{
+	"name": "pages-plugin-example",
+	"version": "0.0.0",
+	"private": true,
+	"main": "dist/index.js",
+	"types": "index.d.ts",
+	"files": [
+		"dist/",
+		"index.d.ts",
+		"tsconfig.json",
+		"public/"
+	],
+	"scripts": {
+		"build": "wrangler pages functions build --plugin --outdir=dist",
+		"check:type": "tsc"
+	},
+	"devDependencies": {
+		"wrangler": "*"
+	}
+}
