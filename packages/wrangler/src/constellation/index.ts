@@ -1,0 +1,83 @@
+import { logger } from "../logger";
+import * as CreateProject from "./createProject";
+import * as DeleteProject from "./deleteProject";
+import * as DeleteProjectModel from "./deleteProjectModel";
+import * as ListCatalog from "./listCatalog";
+import * as ListModel from "./listModel";
+import * as ListProject from "./listProject";
+import * as ListRuntime from "./listRuntime";
+import * as UploadModel from "./uploadModel";
+import type { CommonYargsArgv } from "../yargs-types";
+
+export function constellation(yargs: CommonYargsArgv) {
+	logger.warn(
+		"`wrangler constellation` is deprecated and will be removed in the next major version.\nPlease migrate to Workers AI, learn more here https://developers.cloudflare.com/workers-ai/."
+	);
+	return yargs
+		.command("project", "🔹Manage your projects", (constProjYargs) => {
+			return constProjYargs
+				.command(
+					"list",
+					"🔹List your projects",
+					ListProject.options,
+					ListProject.handler
+				)
+				.command(
+					"create <name> <runtime>",
+					"🔹Create project",
+					CreateProject.options,
+					CreateProject.handler
+				)
+				.command(
+					"delete <name>",
+					"🔹Delete project",
+					DeleteProject.options,
+					DeleteProject.handler
+				);
+		})
+		.command("model", "🔹Manage your models", (constModelYargs) => {
+			return constModelYargs
+				.command(
+					"upload <projectName> <modelName> <modelFile>",
+					"🔹Upload a model for an existing project",
+					UploadModel.options,
+					UploadModel.handler
+				)
+				.command(
+					"list <projectName>",
+					"🔹List models of a project",
+					ListModel.options,
+					ListModel.handler
+				)
+				.command(
+					"delete <projectName> <modelName>",
+					"🔹Delete a model of a project",
+					DeleteProjectModel.options,
+					DeleteProjectModel.handler
+				);
+		})
+		.command(
+			"catalog",
+			"🔹Check the curated model catalog",
+			(constCatalogYargs) => {
+				return constCatalogYargs.command(
+					"list",
+					"🔹List catalog models",
+					ListCatalog.options,
+					ListCatalog.handler
+				);
+			}
+		)
+		.command(
+			"runtime",
+			"🔹Check the suported runtimes",
+			(constRuntimeYargs) => {
+				return constRuntimeYargs.command(
+					"list",
+					"🔹List suported runtimes",
+					ListRuntime.options,
+					ListRuntime.handler
+				);
+			}
+		);
+}
