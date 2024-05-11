@@ -1,0 +1,25 @@
+{
+	"name": "@cloudflare/prerelease-registry",
+	"version": "0.0.2",
+	"private": true,
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "wrangler pages functions build --fallback-service='' ./functions/routes --outdir=dist",
+		"check:lint": "eslint .",
+		"check:type": "tsc",
+		"prepublish": "npm run build",
+		"publish": "wrangler deploy dist/index.js",
+		"prestart": "npm run build",
+		"start": "wrangler dev dist/index.js"
+	},
+	"dependencies": {
+		"jszip": "^3.7.1"
+	},
+	"devDependencies": {
+		"@cloudflare/eslint-config-worker": "*",
+		"@cloudflare/workers-tsconfig": "*",
+		"@cloudflare/workers-types": "^4.20221111.1",
+		"typescript": "^4.5.5",
+		"wrangler": "*"
+	}
+}
