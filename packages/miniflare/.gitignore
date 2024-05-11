@@ -1,0 +1,6 @@
+.mf
+.tmp
+dist-types
+*.metafile.json
+*.drawio.svg.bkp
+*.drawio.svg.dtmp
