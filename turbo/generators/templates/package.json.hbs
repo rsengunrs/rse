@@ -1,0 +1,17 @@
+{
+	"name": "{{name}}",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+    "build": "echo 'No build step configured'",
+		"check:lint": "eslint .",
+    "check:type": "tsc",
+    "test": "vitest run",
+		"test:ci": "vitest run"
+	},
+	"devDependencies": {
+		"@cloudflare/eslint-config-worker": "workspace:*",
+		"@cloudflare/workers-tsconfig": "workspace:*",
+		"wrangler": "workspace:*"
+	}
+}
