@@ -1,0 +1,14 @@
+{
+	"name": "rules-app",
+	"private": true,
+	"description": "",
+	"keywords": [],
+	"license": "ISC",
+	"author": "",
+	"scripts": {
+		"check:type": "tsc"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

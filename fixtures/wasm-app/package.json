@@ -1,0 +1,7 @@
+{
+	"name": "wasm-app",
+	"private": true,
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

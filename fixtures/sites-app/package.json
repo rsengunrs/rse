@@ -1,0 +1,15 @@
+{
+	"name": "sites-app",
+	"private": true,
+	"description": "",
+	"keywords": [],
+	"license": "ISC",
+	"author": "",
+	"main": "index.js",
+	"dependencies": {
+		"@cloudflare/kv-asset-handler": "workspace:*"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

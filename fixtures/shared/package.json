@@ -1,0 +1,11 @@
+{
+	"name": "fixtures-shared",
+	"private": true,
+	"description": "Shared fixtures for testing",
+	"devDependencies": {
+		"wrangler": "workspace:*"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}
