@@ -1,0 +1,13 @@
+{
+	"$schema": "http://turbo.build/schema.json",
+	"extends": ["//"],
+
+	"pipeline": {
+		"build": {
+			"env": ["VITEST", "TEST_PM", "CI"]
+		},
+		"test:e2e:*": {
+			"env": ["CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN"]
+		}
+	}
+}
