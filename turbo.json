@@ -1,0 +1,38 @@
+{
+	"$schema": "http://turbo.build/schema.json",
+	"remoteCache": {
+		"signature": true
+	},
+	"globalEnv": ["CI_OS", "NODE_VERSION"],
+	"pipeline": {
+		"dev": {
+			"persistent": true,
+			"cache": false
+		},
+		"build": { "dependsOn": ["^build"] },
+		"test": {
+			"dependsOn": ["build"]
+		},
+		"test:watch": {
+			"persistent": true,
+			"cache": false
+		},
+		"topological": {
+			"dependsOn": ["^topological"]
+		},
+		"check:lint": {
+			"dependsOn": ["topological"]
+		},
+		"check:type": {
+			"dependsOn": ["topological"]
+		},
+		"type:tests": {
+			"dependsOn": ["topological"]
+		},
+		"test:ci": {
+			"dependsOn": ["build"]
+		},
+		"test:e2e": {},
+		"//#check:format": { "cache": true }
+	}
+}

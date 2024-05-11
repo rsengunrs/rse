@@ -1,0 +1,10 @@
+{
+	"name": "wrangler-dev-api-app",
+	"private": true,
+	"description": "",
+	"license": "ISC",
+	"author": "",
+	"scripts": {
+		"dev": "node --no-warnings ./src/wrangler-dev.mjs"
+	}
+}
