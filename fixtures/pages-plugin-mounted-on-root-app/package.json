@@ -1,0 +1,26 @@
+{
+	"name": "pages-plugin-mounted-on-root-app",
+	"private": true,
+	"sideEffects": false,
+	"main": "dist/worker.js",
+	"scripts": {
+		"check:type": "tsc",
+		"dev": "wrangler pages dev public --port 8793",
+		"test:ci": "vitest run",
+		"test:watch": "vitest",
+		"type:tests": "tsc -p ./tests/tsconfig.json"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-tsconfig": "workspace:*",
+		"@cloudflare/workers-types": "^4.20240419.0",
+		"pages-plugin-example": "workspace:*",
+		"undici": "^5.28.3",
+		"wrangler": "workspace:*"
+	},
+	"engines": {
+		"node": ">=16.13"
+	},
+	"dependencies": {
+		"is-odd": "^3.0.1"
+	}
+}
